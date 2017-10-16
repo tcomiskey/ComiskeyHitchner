@@ -160,7 +160,8 @@ Run the following commands:
     **Staged**
 
     ```
-
+names.txt
+Most recent version of file has been added but the changes have not yet been committed
 
 
     ```
@@ -168,23 +169,23 @@ Run the following commands:
     **Unstaged**
 
     ```
-
-
+movies.txt
+Changes have been made to file since last add or commmit call
 
     ```
 
     **Untracked**
 
     ```
-
-
+foods.txt
+Was never added so the repository does not know about this file
 
     ```
 
 1.  If you run `git commit` what changes will be committed (***DON’T DO IT***)?
 
     ```
-
+names.txt will be committed
 
 
     ```
@@ -192,7 +193,7 @@ Run the following commands:
 2.  What command do you run to stage changes?
 
     ```
-
+git add <file>
 
 
     ```
@@ -200,7 +201,7 @@ Run the following commands:
 3.  What command do you run to unstage changes?
 
     ```
-
+git reset HEAD <file>
 
 
     ```
@@ -213,7 +214,7 @@ Run the following commands:
 1.  What does `git diff` display?
 
     ```
-
+Shows the unstaged changes in the file movies.txt
 
 
     ```
@@ -221,7 +222,7 @@ Run the following commands:
 2.  What does `git diff --cached` display?
 
     ```
-
+Shows the staged changes in the file names.txt
 
 
     ```
@@ -231,7 +232,8 @@ Run the following commands:
     confirm they worked.
 
     ```
-
+git reset HEAD names.txt
+git add movies.txt
 
 
     ```
@@ -241,7 +243,7 @@ Run the following commands:
     going on.
 
     ```
-
+Now we have a copy of movies.txt that is staged to be committed and another copy with the changes that is unstaged. Git is attempting to save the original because it was already staged to be committed, but movies.txt is not untracked so it knows that we have altered the file.
 
 
     ```
@@ -250,7 +252,7 @@ Run the following commands:
     Explain what you think is going on.
 
     ```
-
+names.txt is listed as Deleted in the not staged list and is no longer in the directory. Git was already tracking it so it still knows that file existed
 
 
     ```
@@ -259,7 +261,7 @@ Run the following commands:
     and explain.
 
     ```
-
+Now movies.txt is listed as deleted in the not staged category and last-movies.txt is listed as untracked. Git is treating a renamed file as a new file.
 
 
     ```
@@ -269,7 +271,8 @@ Run the following commands:
     Execute them.
 
     ```
-
+git add .
+git commit -m "Different movies, more food and no more names" . 
 
 
     ```
@@ -278,7 +281,7 @@ Run the following commands:
     same thing. What does it hold?
 
     ```
-
+It holds the most recently added version of a file to be committed.
 
 
     ```
@@ -287,7 +290,7 @@ Run the following commands:
     commit?
 
     ```
-
+You might not be finished modifying some files and not want them to be committed yet so you only commit the files that were added to the stage and ready to be committed. 
 
 
     ```
@@ -306,7 +309,7 @@ Run the following commands:
 1.  What does `git reset --soft ``"HEAD^" `do?
 
     ```
-
+Undid the most recent commit so movies.txt new name is not committed, foods.txt is not committed and names.txt being deleted is not committed.
 
 
     ```
@@ -323,7 +326,8 @@ Run the following commands:
 1.  What does `git reset --hard ``"HEAD^"`` `do?
 
     ```
-
+printed " Head is now at e3b301c Our Lab Progress"
+git log showed the same things as --soft, but git status showed that there were no files staged to be committed and that my branch is up-to-date.
 
 
     ```
@@ -331,7 +335,7 @@ Run the following commands:
 2.  What is the difference between `--hard` and `--soft`?
 
     ```
-
+--soft just uncommits the changes, while --hard goes back to before the changes were made. When ls called names.txt was still in directory and movies.txt was not renamed. 
 
 
     ```
@@ -339,14 +343,14 @@ Run the following commands:
 3.  What do you think `HEAD` means?
 
     ```
-
+Most recent commit
 
     ```
 
 4.  What do you think `HEAD^` means?
 
     ```
-
+Parent of most recent commit
 
     ```
 
